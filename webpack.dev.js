@@ -17,7 +17,7 @@ module.exports = merge(common, {
             }
         ]
     },
-    devServer: {
+    /*devServer: {
         compress: true,
         client: {
             overlay: {
@@ -25,5 +25,19 @@ module.exports = merge(common, {
                 warnings: false
             }
         }
+    }*/
+   devServer: {
+    static: './dist', // waar je gebuildde files staan
+    port: 3000,       // kies zelf een poort
+    compress: true,
+    hot: false,       // Hot Module Replacement (sneller, vervangt alleen modules)
+    liveReload: true, // Browser volledig refreshen als HMR niet kan
+    client: {
+        overlay: {
+            errors: true,
+            warnings: false
+        }
     }
+}
+
 });
